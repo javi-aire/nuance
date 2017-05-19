@@ -4,6 +4,7 @@
   "description": "Thank you for taking the time to complete this candidate assessment. Please read through this entire README before attempting to complete the assignment. The following exercise is meant to test your knowledge of HTML, CSS, and Javascript, and to give you a better idea of the type of work you will be doing at Nuance.",
   "main": "index.html",
   "scripts": {
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Javier Williams",
