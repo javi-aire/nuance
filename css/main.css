@@ -51,9 +51,6 @@
   Form
   --Includes:
 ======*/
-.form {
-}
-
 .form-title {
   font-weight: lighter;
   font-size: .75em;
@@ -64,18 +61,34 @@
 
 .form-input {
   box-sizing: border-box;
-  border-radius: 3px;
   display: block;
   border: 1px solid #ccc;
   width: 24.40em;
   margin-bottom: 1.5em;
   padding: 0.75em 0 .75em 0;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
 }
 
 .form-input:focus {
   background-color: #e0f4ff;
 }
 
+.form-input--select {
+  background: transparent;
+  width: 24.4em;
+  padding: 0.75em 0 0.75em 0.5em;
+  margin-bottom: 1.5em;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+   /*Hides the default arrows for Selects*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/*Full Name and Phone Number inputs */
 [name=fullName],
 [name=phoneNum] {
   font-style: italic;
@@ -84,12 +97,31 @@
   padding-left: 5px;
 }
 
+/* State select dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown:before {
+  content: "";
+  position: absolute;
+  right: 45px;
+  top: 28px;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 7px solid black;
+}
+
+
+/* Please describe your question input */
 [name=describeText] {
   padding-bottom: 2.88em;
   resize: vertical;
   overflow: scroll;
 }
 
+/* Submit button & required text below */
 .submit {
   float: right;
   position: relative;
