@@ -14,9 +14,8 @@ import babel from 'gulp-babel';
 * Object map of paths for use with tasks
 */
 const paths = {
-  src: '/',
   js: './js/**/*.js',
-  images: './client/assets/images/**/*',
+  images: './images/**/*',
   html: './*.html',
   css: './css/**/*.css',
   dest: 'dist'
@@ -44,6 +43,15 @@ gulp.task('html', ['css'], () => {
 });
 
 /**
+* minify images
+*/
+gulp.task('images', () => {
+  return gulp.src(paths.images)
+    .pipe(imgMin())
+    .pipe(gulp.dest(`${paths.dest}/images`));
+});
+
+/**
 * compile and minify JS (even though there isn't any)
 */
 gulp.task('babel', () => {
@@ -59,17 +67,19 @@ gulp.task('babel', () => {
 * compiles/minifies all on any change
 */
 gulp.task('watch', ['serve'], () => {
-  gulp.watch(`${paths.src}/**/*.{js,scss,html}`, ['css', 'html', 'babel', browser.reload]);
+  gulp.watch(paths.css, ['css', browser.reload]);
+  gulp.watch(paths.html, ['html', browser.reload]);
+  gulp.watch(paths.js, ['babel', browser.reload]);
 });
 
 
 /**
-* serve on port 3175 from base directory dist/
+* serve on port 3000 from base directory dist/
 * also exposes node_modules to dist so nothing will break :)
 */
 gulp.task('serve', () => {
   browser({
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 8000,
     ghostMode: false,
     open: false,
     server: {
@@ -86,7 +96,7 @@ gulp.task('serve', () => {
 * uses run-sequence to run every task in order
 */
 gulp.task('build', () => {
-  return seq('css', 'html', 'babel', 'watch');
+  return seq('css', 'html','images', 'babel', 'watch');
 });
 
 

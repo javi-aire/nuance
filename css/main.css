@@ -7,3 +7,121 @@
   position: fixed;
   width: 350px;
 }
+
+/*=======
+  Header
+  --Includes: logo, &times; for close
+=======*/
+.header-container {
+  background: #1b1b1b;
+  border-bottom: 3px solid #1a6b96;
+}
+
+.header-brand {
+  position: relative;
+  padding: 0.312em 0 0.312em 1.63em;
+  width: 7em;
+}
+
+.header-close {
+  position: relative;
+  bottom: .85em;
+  padding: 0 0 0 11.05em;
+  text-decoration: none;
+  font-weight: 600;
+  color: #e7eeee;
+}
+
+
+/*======
+  Survey
+  --Includes: survey-form wrapper, survey intro question
+======*/
+.survey-form {
+  padding: 2.25em 0 0 2.81em;
+}
+
+.survey-intro {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+
+/*======
+  Form
+  --Includes:
+======*/
+.form {
+}
+
+.form-title {
+  font-weight: lighter;
+  font-size: .75em;
+  letter-spacing: .5px;
+  position: relative;
+  bottom: .5em;
+}
+
+.form-input {
+  box-sizing: border-box;
+  border-radius: 3px;
+  display: block;
+  border: 1px solid #ccc;
+  width: 24.40em;
+  margin-bottom: 1.5em;
+  padding: 0.75em 0 .75em 0;
+}
+
+.form-input:focus {
+  background-color: #e0f4ff;
+}
+
+[name=fullName],
+[name=phoneNum] {
+  font-style: italic;
+  opacity: .6;
+  position: relative;
+  padding-left: 5px;
+}
+
+[name=describeText] {
+  padding-bottom: 2.88em;
+  resize: vertical;
+  overflow: scroll;
+}
+
+.submit {
+  float: right;
+  position: relative;
+  right: 2.56em;
+  top: .35em;
+}
+
+.survey-submit {
+  background: #1a6b96;
+  color: #fff;
+  padding: 1.125em 4.32em 1.125em 4.32em;
+  border-radius: 5px;
+  border: none;
+}
+.required-text {
+  font-size: .5em;
+  position: relative;
+  left: 8em;
+  top: .75em;
+}
+/*======
+  Footer
+  --Includes: The craziest text in the Seven Kingdoms
+======*/
+.footer {
+  background: #ccc;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  font-size: .5em;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: .97em 0 .97em 0;
+}

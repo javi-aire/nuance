@@ -14,8 +14,101 @@
     -->
 
     <div id="survey">
+      <div class="header-container">
+        <header class="header">
+          <a href="#"><img class="header-brand" src="./images/logo.png" alt="brand logo" /></a>
+          <a href="/#close" class="header-close">&times;</a>
+        </header>
+      </div>
+      <div class="survey-form">
+        <h3 class="form survey-intro">How can we help you?</h3>
+        <form name="nuance" class="form">
+          <!-- Name -->
+          <div class="form form-name">
+            <label for="form_full-name" class="form-title">* Full Name</label>
+            <input type="text" id="form_full-name" name="fullName" class="form-input" value="John Doe"/>
+          </div>
+          <br />
 
-    </div>
+          <!-- Phone Num -->
+          <div class="form form-phone">
+            <label for="form_phone-num" class="form-title">* Phone Number</label>
+            <input type="text" id="form_phone-num" name="phoneNum" value="888-123-4567" class="form-input"/>
+          </div>
+
+          <!-- State -->
+          <div class="form dropdown">
+            <label for="form_state" class="form-title">* State</label>
+            <select id="form_state" name="state" size="1" class="form-input">
+              <option value="Please select a state">Please select a state</option>
+              <option value="AK">AK</option>
+              <option value="AL">AL</option>
+              <option value="AR">AR</option>
+              <option value="AZ">AZ</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DC">DC</option>
+              <option value="DE">DE</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <option value="HI">HI</option>
+              <option value="IA">IA</option>
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="MA">MA</option>
+              <option value="MD">MD</option>
+              <option value="ME">ME</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MO">MO</option>
+              <option value="MS">MS</option>
+              <option value="MT">MT</option>
+              <option value="NC">NC</option>
+              <option value="ND">ND</option>
+              <option value="NE">NE</option>
+              <option value="NH">NH</option>
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>
+              <option value="NV">NV</option>
+              <option value="NY">NY</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VA">VA</option>
+              <option value="VT">VT</option>
+              <option value="WA">WA</option>
+              <option value="WI">WI</option>
+              <option value="WV">WV</option>
+              <option value="WY">WY</option>
+            </select>
+          </div>
+          <!-- PDYQ Textbox -->
+          <div class="form wrapper">
+            <label for="form_describe-text" class="form-title">* Please describe your question</label>
+            <input id="form_describe-text" type="text" name="describeText" class="form-input"/>
+          </div>
+          <div class="submit">
+            <button class="survey-submit" type="submit" name="submit-form-btn">Submit</button>
+            <h6 class="required-text">*required field</h6>
+          </div>
+        </form>
+      </div> <!-- /.survey-form -->
+      <footer class="footer">
+        <p>Powered by Nuance</p>
+      </footer>
+    </div> <!-- /.survey -->
 
     <!-- You shouldn't need to change any of the code below here -->
 
