@@ -20,26 +20,30 @@
           <a href="/#close" class="header-close">&times;</a>
         </header>
       </div>
+      <div id="thankyou">
+        <h3 class="survey-intro">Thank you!</h3>
+        <h3 class="thank-you-note">Your information was submitted successfully. We will now connect you to the next available chat agent.</h3>
+      </div>
       <div class="survey-form">
         <h3 class="survey-intro">How can we help you?</h3>
-        <form name="nuance" class="form">
+        <form name="nuance" class="form" novalidate>
           <!-- Name -->
           <div class="form-name">
             <label for="form_full-name" class="form-title">* Full Name</label>
-            <input type="text" id="form_full-name" name="fullName" class="form-input" value="John Doe"/>
+            <input type="text" id="form_full-name" name="fullName" class="form-input" placeholder="John Doe" />
           </div>
           <br />
 
           <!-- Phone Num -->
           <div class="form-phone">
             <label for="form_phone-num" class="form-title">* Phone Number</label>
-            <input type="text" id="form_phone-num" name="phoneNum" value="888-123-4567" class="form-input"/>
+            <input type="tel" id="form_phone-num" name="phoneNum" placeholder="888-123-4567" class="form-input" patter="^\d{3}[|-]\d{3}[|-]\d{4}$ | ^\(\d{3}\) \d{3}-\d{4}$" required />
           </div>
 
           <!-- State -->
           <div class="dropdown">
             <label for="form_state" class="form-title">* State</label>
-            <select id="form_state" name="state" size="1" class="form-input--select">
+            <select id="form_state" name="state" size="1" class="form-input--select" required>
               <option value="Please select a state">Please select a state</option>
               <option value="AK">AK</option>
               <option value="AL">AL</option>
@@ -97,10 +101,10 @@
           <!-- PDYQ Textbox -->
           <div class="wrapper">
             <label for="form_describe-text" class="form-title">* Please describe your question</label>
-            <input id="form_describe-text" type="text" name="describeText" class="form-input"/>
+            <textarea id="form_describe-text"  name="describeText" class="form-input" required></textarea>
           </div>
           <div class="submit">
-            <button class="survey-submit" type="submit" name="submit-form-btn">Submit</button>
+            <button class="survey-submit" type="submit" name="submitBtn" >Submit</button>
             <h6 class="required-text">*required field</h6>
           </div>
         </form>

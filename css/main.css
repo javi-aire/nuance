@@ -25,13 +25,28 @@
 
 .header-close {
   position: relative;
-  bottom: .85em;
-  padding: 0 0 0 11.05em;
+  top: .75em;
+  right: 1.75em;
+  float: right;
   text-decoration: none;
   font-weight: 600;
+  font-size: .90em;
   color: #e7eeee;
 }
 
+/*======
+  Thank you note
+  --Includes: Text (default display: hidden) informing the user
+  of a successful form submission
+======*/
+#thankyou {
+  display: none;
+  padding: 2.25em 0 0 2.81em;
+}
+
+.thank-you-note {
+  font-weight: lighter;
+}
 
 /*======
   Survey
@@ -53,7 +68,7 @@
 ======*/
 .form-title {
   font-weight: lighter;
-  font-size: .75em;
+  font-size: .85em;
   letter-spacing: .5px;
   position: relative;
   bottom: .5em;
@@ -75,6 +90,11 @@
   background-color: #e0f4ff;
 }
 
+/*.form-input:focus:invalid {
+  background: #ffc0cb;
+  color: #ff0000;
+}*/
+
 .form-input--select {
   background: transparent;
   width: 24.4em;
@@ -83,12 +103,21 @@
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-   /*Hides the default arrows for Selects*/
+   /* Hides the default arrows for Selects */
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-/*Full Name and Phone Number inputs */
+/* Full Name and Phone Number inputs */
+[name=fullName] {
+  margin-bottom: .85em;
+}
+
+/*.form .submitted ~ .form-inputphoneNum]:invalid {
+  border: 1px solid #ff0000;
+  background: #ffc0cb;
+}*/
+
 [name=fullName],
 [name=phoneNum] {
   font-style: italic;
@@ -97,20 +126,30 @@
   padding-left: 5px;
 }
 
+/* Error message with phone title */
+.error-msg {
+  display: none;
+}
+
 /* State select dropdown */
 .dropdown {
   position: relative;
+  margin-bottom: .75em;
+}
+
+.dropdown:focus {
+  background-color: #e0f4ff;
 }
 
 .dropdown:before {
   content: "";
   position: absolute;
-  right: 45px;
-  top: 28px;
+  right: 43px;
+  top: 29px;
   height: 0;
   border-left: 3px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 7px solid black;
+  border-right: 3px solid transparent;
+  border-top: 4.5px solid black;
 }
 
 
@@ -119,6 +158,7 @@
   padding-bottom: 2.88em;
   resize: vertical;
   overflow: scroll;
+  padding-left: 5px;
 }
 
 /* Submit button & required text below */
@@ -135,11 +175,12 @@
   padding: 1.125em 4.32em 1.125em 4.32em;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 .required-text {
-  font-size: .5em;
+  font-size: .65em;
   position: relative;
-  left: 8em;
+  left: 6.25em;
   top: .75em;
 }
 /*======
