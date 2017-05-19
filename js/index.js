@@ -1,7 +1,7 @@
 window.onload = () => {
-  let nameInput = document.forms.nuance.fullName;
-  let phoneInput = document.forms.nuance.phoneNum;
-
+  let nameInput = document.forms.nuance.fullName,
+    phoneInput = document.forms.nuance.phoneNum,
+    closeButton = document.getElementsByClassName('header-close')[0];
   let onFocus = (e) => {
     let element = e.target || window.event.srcElement;
     if ( element.value === "John Doe"  || element.value === "888-123-4567"){
@@ -10,7 +10,7 @@ window.onload = () => {
     }
   };
 
-  let onBlur = (e) =>{
+  let onBlur = (e) => {
     let element = e.target || window.event.srcElement;
     if ( element.value === "" && element === document.forms.nuance.fullName ){
       element.value = "John Doe";
@@ -21,16 +21,24 @@ window.onload = () => {
     }
   };
 
-  if(nameInput.addEventListener || phoneInput.addEventListener){
+  let closeChat = (e) => {
+    document.getElementById('survey').style.cssText = "display: none;";
+  };
+
+  if(nameInput.addEventListener || phoneInput.addEventListener || closeButton.addEventListener){
     nameInput.addEventListener("focus", onFocus, false);
     phoneInput.addEventListener("focus", onFocus, false);
     nameInput.addEventListener("blur", onBlur, false);
     phoneInput.addEventListener("blur", onBlur, false);
-  } else if(nameInput.attachEvent || phoneInput.attachEvent){
+    closeButton.addEventListener("click", closeChat, false);
+  } else if(nameInput.attachEvent || phoneInput.attachEvent || closeButton.attachEvent){
     nameInput.attachEvent("onfocus", onFocus);
     phoneInput.attachEvent("onfocus", onFocus);
     nameInput.attachEvent("onblur", onBlur);
     phoneInput.attachEvent("onblur", onBlur);
+    closeButton.attachEvent('onclick', closeChat);
   }
+
+
 
 };
